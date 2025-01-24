@@ -1,9 +1,9 @@
 ## Yet Another Mandelbrot Set Visualization with python
 
 Simple Goal:
+
 1. Visualize Mandelbrot set in python
 2. All code or any type of text writing/editing to be handled in Vim.
-
 
 Day 1: Spent way too much time on configuring the .vimrc file, so could not code much on day 1. 
 Mandelbrot set is generally defined in complex plane, it is essentially the set of all complex numbers on a plane that stay stable when applied the below recurrence relation, `Z(n+1) = Z(n)^2 + c`. Some complex numbers explode, while some stay stable. <br> 
@@ -28,6 +28,17 @@ magnitude matters and numbers below -2, like -3, -5, etc.. when square have grea
 they do not explode. Below is a scatterplot depicting just that, numbers from [-2 - 0] at intervals of 0.01, apply recurrence relation 100 times.
 ![plot](mandlebrot_real_neg.png "Mandelbrot for Real Negative Numbers")
 
- 
 
+Some Days later:
+Great Success, after some days of negligence due to health decline we got out of the real plane and initial wrote code for calculating next complex numbers in series according to our reccurence relation, this initial approach was iterative so not very optimized, but bruteforcing something definitely helps you get clarity, so suppose we start with c = 1 + 1j, by our recurrence relation of `Z(n+1) = Z(n)^2 + c`, we get 
+Z0 = 1 + 1j
+Z1 = 1 + 3j
+Z2 = -7 + 7j
+Z3 = 1 + -97j
+Z4 = -9407 + -193j
+Z5 = 88454401 + 3631103j
 
+Now we generate the cordinate points, for our concerned bounding space, and have a upper limit on the value of complex number. In iterative method we can easily use nested loops to get all cords and check if they are in the mandelbrot set by calculation the recurence relation a fixed numbers of times and evaluating if the complex number stays in bound or explode. Later using numpy, we can easily generate grid using meshgrid and other operations are also vectorized so for a boundary of -2, 2 with 2000 steps and 15 iteration per point we get the below image:
+![mdl_plot](mdl_set.png "Mandelbrot set plot")
+
+currently we work on boundary of -k, k but as we can see many positive real numbers after 0.5 and negative numbers after -2 mostly have no members, later we can have dynamic ranges.
