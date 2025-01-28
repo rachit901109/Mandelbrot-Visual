@@ -3,9 +3,9 @@ import numpy as np
 from PIL import Image
 
 N=2000
-tol=100
-x = np.linspace(0.3, 0.5, N, dtype=np.float128)
-y = np.linspace(-0.2, 0.2, N, dtype=np.float128)
+tol=1000
+x = np.linspace(-0.75, -0.73, N, dtype=np.float128)
+y = np.linspace(0.12, 0.14, N, dtype=np.float128)
 #print(x, y, sep="\n")
 xx, yy = np.meshgrid(x, y)
 
