@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-r = 1
-img = 1
+r = -2
+img = -1.5
 x=[]
 y=[]
 

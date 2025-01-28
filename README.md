@@ -42,3 +42,7 @@ Now we generate the cordinate points, for our concerned bounding space, and have
 ![mdl_plot](mdl_set.png "Mandelbrot set plot")
 
 currently we work on boundary of -k, k but as we can see many positive real numbers after 0.5 and negative numbers after -2 mostly have no members, later we can have dynamic ranges.
+
+A day or 2 later:
+Small mistake in above approach, we actually have to check the mod of the complex numbers and make sure it is under the tolerance value, but in above implemenation we were actually checking if `real part < tol and img part < tol`, instead we had to get $mod = \sqrt{real^2 + img^2}$, fixed that and also made the new range, (-2, 0.5) on real axis and (-1.25, -1.25) on img axix
+![updated_plot](final_mdlset.png "Updated image of Mandelbrot set")
