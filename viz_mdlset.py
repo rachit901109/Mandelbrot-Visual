@@ -2,16 +2,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
-N=5000
-tol=2
-x = np.linspace(-2, 0.75, N, dtype=np.float128)
-y = np.linspace(-1.25, 1.25, N, dtype=np.float128)
+N=2000
+tol=100
+x = np.linspace(0.3, 0.5, N, dtype=np.float128)
+y = np.linspace(-0.2, 0.2, N, dtype=np.float128)
 #print(x, y, sep="\n")
 xx, yy = np.meshgrid(x, y)
 
 #print(xx, yy, xx.shape, sep="\n"+"--"*30+"\n")
 
-for i in range(15):
+for i in range(256):
     if i==0:
         newr = xx
         newi = yy

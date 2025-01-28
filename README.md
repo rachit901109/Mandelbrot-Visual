@@ -31,12 +31,12 @@ they do not explode. Below is a scatterplot depicting just that, numbers from [-
 
 Some Days later:
 Great Success, after some days of negligence due to health decline we got out of the real plane and initial wrote code for calculating next complex numbers in series according to our reccurence relation, this initial approach was iterative so not very optimized, but bruteforcing something definitely helps you get clarity, so suppose we start with c = 1 + 1j, by our recurrence relation of `Z(n+1) = Z(n)^2 + c`, we get 
-Z0 = 1 + 1j
-Z1 = 1 + 3j
-Z2 = -7 + 7j
-Z3 = 1 + -97j
-Z4 = -9407 + -193j
-Z5 = 88454401 + 3631103j
+1. Z0 = 1 + 1j
+1. Z1 = 1 + 3j
+1. Z2 = -7 + 7j
+1. Z3 = 1 + -97j
+1. Z4 = -9407 + -193j
+1. Z5 = 88454401 + 3631103j
 
 Now we generate the cordinate points, for our concerned bounding space, and have a upper limit on the value of complex number. In iterative method we can easily use nested loops to get all cords and check if they are in the mandelbrot set by calculation the recurence relation a fixed numbers of times and evaluating if the complex number stays in bound or explode. Later using numpy, we can easily generate grid using meshgrid and other operations are also vectorized so for a boundary of -2, 2 with 2000 steps and 15 iteration per point we get the below image:
 ![mdl_plot](mdl_set.png "Mandelbrot set plot")
@@ -46,3 +46,7 @@ currently we work on boundary of -k, k but as we can see many positive real numb
 A day or 2 later:
 Small mistake in above approach, we actually have to check the mod of the complex numbers and make sure it is under the tolerance value, but in above implemenation we were actually checking if `real part < tol and img part < tol`, instead we had to get $mod = \sqrt{real^2 + img^2}$, fixed that and also made the new range, (-2, 0.5) on real axis and (-1.25, -1.25) on img axix
 ![updated_plot](final_mdlset.png "Updated image of Mandelbrot set")
+
+Same day:
+After tweaking around value, we get a beautiful pattern from mandelbrot set around the Misiurewicz Point.
+![spiral](Misiurewicz_Point.png "Spiral patterns in mandelbrot set at Misiurewicz Point")
